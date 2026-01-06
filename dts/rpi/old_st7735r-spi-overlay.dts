@@ -1,0 +1,28 @@
+/* this is the DTS that would work if the SPI children/devices of Pi/Board was not created by firmware, and we were allowed to directly create child of the soc/spi_controller node */
+
+/dts-v1/;
+/plugin/;
+
+/{
+	compatible = "brcm,bcm2711";
+
+	fragment@0 {
+		target = <&spi0>;
+
+		__overlay__ {
+			status = "okay";
+
+			lcd@0 {
+				compatible = "sitronix,st7735r,my-st7735r-lcd";
+				reg = <0>;
+
+				spi-max-frequency = <16000000>;
+				spi-mode = <0>;
+
+				dc-gpios = <&gpio 25 0>;
+				reset-gpios = <&gpio 24 0>;
+				backlight-gpios = <&gpio 18 0>;
+			};
+		};
+	};
+};

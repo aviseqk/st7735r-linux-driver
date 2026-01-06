@@ -1,0 +1,25 @@
+compile_commands.json
+commands.md
+
+# Objet files
+*.ko
+*.mod
+*.o
+*.a
+*.so
+*.mod*
+*.mod.c
+*.mod.o
+.*.cmd
+
+# kernel artifacts
+*.cmd
+*.order
+*.symvers
+
+# LKM Modules lists
+modules.order
+Module.symvers
+
+# device tree blobs
+*.dtbo

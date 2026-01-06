@@ -1,0 +1,30 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "brcm,bcm2711";
+
+    fragment@0 {
+	target-path = "/soc/spi@7e204000/spidev@0";
+
+	__overlay__ {
+	    /* replace the pi's default spidev0 with our LCD */
+
+
+        /* compatible = "sitronix,st7735r","my-st7735r-lcd";  */  
+        /* this compatible string was leading to a driver race, where 
+         * an in-tree driver (fb_st7735r of fbtft) ended up probing the
+         * device first, hence using a custom compatible strings */
+        compatible = "abhishek,st7735r-test";
+
+        /* reg = <0>;  no longer needed, as spidev0 already that 0_0 node is getting overlayed in place */
+
+	    spi-max-frequency = <16000000>;
+	    spi-mode = <0>;
+
+	    dc-gpios = <&gpio 25 0>;
+	    reset-gpios = <&gpio 24 0>;
+	    backlight-gpios = <&gpio 18 0>;
+	};
+    };
+};
