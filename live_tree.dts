@@ -1938,7 +1938,7 @@
 				#size-cells = <0x00>;
 				spi-max-frequency = <0xf42400>;
 				reset-gpios = <0x07 0x18 0x00>;
-				compatible = "sitronix,st7735r", "my-st7735r-lcd";
+				compatible = "abhishek,st7735r-test";
 				dc-gpios = <0x07 0x19 0x00>;
 				reg = <0x00>;
 				spi-mode = <0x00>;
@@ -2236,7 +2236,7 @@
 
 	chosen {
 		linux,initrd-end = <0x2effffd6>;
-		bootargs = "coherent_pool=1M 8250.nr_uarts=1 snd_bcm2835.enable_headphones=0 cgroup_disable=memory numa_policy=interleave nvme.max_host_mem_size_mb=0 snd_bcm2835.enable_headphones=1 snd_bcm2835.enable_hdmi=1 snd_bcm2835.enable_hdmi=0  numa=fake=2 system_heap.max_order=0 smsc95xx.macaddr=2C:CF:67:15:60:C3 vc_mem.mem_base=0x3ec00000 vc_mem.mem_size=0x40000000  console=tty1 root=PARTUUID=9b2ab0cc-02 rootfstype=ext4 fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consoles cfg80211.ieee80211_regdom=IN";
+		bootargs = "coherent_pool=1M 8250.nr_uarts=1 snd_bcm2835.enable_headphones=0 cgroup_disable=memory numa_policy=interleave nvme.max_host_mem_size_mb=0 snd_bcm2835.enable_headphones=1 snd_bcm2835.enable_hdmi=1 snd_bcm2835.enable_hdmi=0  numa=fake=2 system_heap.max_order=0 smsc95xx.macaddr=2C:CF:67:15:60:C3 vc_mem.mem_base=0x3ec00000 vc_mem.mem_size=0x40000000  console=ttyAMA0,115200 console=tty1 root=PARTUUID=9b2ab0cc-02 rootfstype=ext4 fsck.repair=yes rootwait cfg80211.ieee80211_regdom=IN";
 		os_prefix = [00];
 		kaslr-seed = <0x00 0x00>;
 		log = <0x3ff80000 0x7ffe0>;
@@ -2251,7 +2251,7 @@
 			capabilities = <0x7f>;
 			build-timestamp = <0x681ccbff>;
 			tryboot = <0x00>;
-			rsts = <0x20>;
+			rsts = <0x1000>;
 			update-timestamp = <0x68437c4e>;
 			version = "69471177ba7e4cb7597cb2496f2a0b23f19c1113";
 			boot-mode = <0x01>;

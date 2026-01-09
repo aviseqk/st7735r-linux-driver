@@ -22,8 +22,9 @@
 	    spi-max-frequency = <16000000>;
 	    spi-mode = <0>;
 
+        /* TODO: replace all gpios entry with GPIO_ACTIVE_LOW or GPIO_ACTIVE_HIGH based on datasheet */
 	    dc-gpios = <&gpio 25 0>;
-	    reset-gpios = <&gpio 24 0>;
+        reset-gpios = <&gpio 24 1>;
 	    backlight-gpios = <&gpio 18 0>;
 	};
     };

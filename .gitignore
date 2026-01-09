@@ -23,3 +23,7 @@ Module.symvers
 
 # device tree blobs
 *.dtbo
+
+# dev-notes
+notes.md
+test.c
