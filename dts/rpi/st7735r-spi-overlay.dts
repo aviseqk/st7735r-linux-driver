@@ -26,6 +26,9 @@
 	    dc-gpios = <&gpio 25 0>;
         reset-gpios = <&gpio 24 1>;
 	    backlight-gpios = <&gpio 18 0>;
-	};
+	        
+        /*TODO: add rotation value in the Device Tree for the orientation of the display */
+        rotation = <180>;
+        };
     };
 };
